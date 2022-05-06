@@ -4,6 +4,11 @@
 > This repo intends to make everything easier.   
 > There is nothing you can learn by writing the logics yourself.
 
+*Installation*
+```bash
+pip install git+https://github.com/Kira1108/ml_utils.git
+```
+
 *Example*
 ```python
 from ml_utils.cv import prepare_cv_dataset
