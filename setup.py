@@ -6,4 +6,4 @@ setup(name='ml_utils',
       description='useful function for machine learning',
       author='The fastest man alive.',
       packages=find_packages(),
-      install_requires=['numpy'])
+      install_requires=['numpy','tensorflow','matplotlib'])
