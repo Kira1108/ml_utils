@@ -1,5 +1,9 @@
 # Less Tedious Code
 
+> It is quite boring to write ml code, especially preprocessing code.   
+> This repo intends to make everything easier.   
+> There is nothing you can learn by writing the logics yourself.
+
 *Example*
 ```python
 from ml_utils.cv import prepare_cv_dataset
