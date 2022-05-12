@@ -55,4 +55,4 @@ def create_paired_samples(x, y):
             pairs = [x[z1],x[z2]]
 
             labels += [1, 0]
-    return np.array(pairs), np.array(labels)
+    return np.array(pairs), np.array(labels).astype('float32')
