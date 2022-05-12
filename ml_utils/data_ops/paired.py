@@ -48,11 +48,11 @@ def create_paired_samples(x, y):
         for i in range(n):
             # in each iteration, generate 2 samples
             z1, z2 = [digit_indices[d][i], digit_indices[d][i+1]]
-            pairs = [x[z1],x[z2]]
+            pairs += [x[z1],x[z2]]
 
             d_not = not_class(d)
             z1, z2 = [digit_indices[d][i], digit_indices[d_not][i+1]]
-            pairs = [x[z1],x[z2]]
+            pairs += [x[z1],x[z2]]
 
             labels += [1, 0]
     return np.array(pairs), np.array(labels).astype('float32')
