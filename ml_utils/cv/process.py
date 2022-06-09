@@ -2,6 +2,7 @@ import base64
 from io import BytesIO
 from PIL import Image
 import numpy as np
+import os
 import logging
 logger = logging.getLogger(__name__)
 
@@ -17,13 +18,18 @@ app = FastAPI()
 class ImageRequest(BaseModel):
     data:str
 
-
 @app.post("/image")
 def handle_image_to_file(imreq:ImageRequest):
     img = b64string2numpy(imreq.data)
     imsave(img, "testsaveimage.png")
     return {"Status":"success"}
 """
+
+
+def generate_image_router(path = ".", filename = "image_api.py"):
+    with open(os.path.join(path, filename), 'w') as f:
+        f.write(IMAGE_PROCESS_API_EXAMPLE)
+    
 
 
 def file2b64(path:str, encode:bool = True):

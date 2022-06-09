@@ -6,4 +6,8 @@ setup(name='ml_utils',
       description='useful function for machine learning',
       author='The fastest man alive.',
       packages=find_packages(),
-      install_requires=['numpy','tensorflow','matplotlib'])
+      install_requires=['numpy','tensorflow','matplotlib','click'],
+      entry_points="""
+        [console_scripts]
+        mlxx=ml_utils.cli:cli
+    """)
