@@ -6,6 +6,26 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+PROCESS_API_EXAMPLE = """
+from ml_utils.cv import b64string2numpy, imsave
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+
+app = FastAPI()
+
+class ImageRequest(BaseModel):
+    data:str
+
+
+@app.post("/image")
+def handle_image_to_file(imreq:ImageRequest):
+    img = b64string2numpy(imreq.data)
+    imsave(img, "testsaveimage.png")
+    return {"Status":"success"}
+"""
+
+
 def file2b64(path:str, encode:bool = True):
     """Convert a image file to base64 string, encoded or not
 
