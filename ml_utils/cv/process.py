@@ -6,7 +6,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-PROCESS_API_EXAMPLE = """
+IMAGE_PROCESS_API_EXAMPLE = """
 from ml_utils.cv import b64string2numpy, imsave
 from fastapi import FastAPI
 from pydantic import BaseModel
